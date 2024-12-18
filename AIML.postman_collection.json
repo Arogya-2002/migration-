@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "3cf56a6d-f296-4050-b818-22fd6a87d2b8",
+		"name": "AIML",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34837154"
+	},
+	"item": [
+		{
+			"name": "annotate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IldsZFhxUFZFZndGbGJrQU4iLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2l4bmJmdnllbmlrc2JxY2ZkbWRvLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI5YzBlZmRmZi04MjEyLTQ5ZTEtYjVjNy05ZmM5Mzg5ZjkzYjIiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzM0MDc1MDQyLCJpYXQiOjE3MzM0NzAyNDIsImVtYWlsIjoiIiwicGhvbmUiOiI5MTYzMDA4NDU0NDYiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJwaG9uZSIsInByb3ZpZGVycyI6WyJwaG9uZSJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiOWMwZWZkZmYtODIxMi00OWUxLWI1YzctOWZjOTM4OWY5M2IyIn0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoib3RwIiwidGltZXN0YW1wIjoxNzMzNDcwMjQyfV0sInNlc3Npb25faWQiOiJkOGFlNTU1YS1kYTU0LTRlODAtOGRiOC1hMmUwNDhiYWI0YjIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.Q_wwSBNRQyv-nfjUdXWpMWZBBOV0oqug3PY0NhLUqDQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Inception",
+							"type": "text"
+						},
+						{
+							"key": "releaseYear",
+							"value": "2010",
+							"type": "text"
+						},
+						{
+							"key": "genre",
+							"value": "Science Fiction",
+							"type": "text"
+						},
+						{
+							"key": "director",
+							"value": "Christopher Nolan",
+							"type": "text"
+						},
+						{
+							"key": "emotionLabel",
+							"value": "Excitement",
+							"type": "text"
+						},
+						{
+							"key": "emotionDescription",
+							"value": "A feeling of intense anticipation and eagerness.",
+							"type": "text"
+						},
+						{
+							"key": "actors[0]name",
+							"value": "Leonardo DiCaprio",
+							"type": "text"
+						},
+						{
+							"key": "actors[0]dob",
+							"value": "1974-11-11",
+							"type": "text"
+						},
+						{
+							"key": "actors[0]filmography",
+							"value": "Inception, Titanic, The Revenant",
+							"type": "text"
+						},
+						{
+							"key": "actors[1]name",
+							"value": "Joseph Gordon-Levitt",
+							"type": "text"
+						},
+						{
+							"key": "actors[1]dob",
+							"value": "1981-02-17",
+							"type": "text"
+						},
+						{
+							"key": "actors[1]filmography",
+							"value": "Inception, Looper, 500 Days of Summer",
+							"type": "text"
+						},
+						{
+							"key": "dialogs[0]text",
+							"value": "You mustn't be afraid to dream a little bigger, darling.",
+							"type": "text"
+						},
+						{
+							"key": "dialogs[0]actor",
+							"value": "Leonardo DiCaprio",
+							"type": "text"
+						},
+						{
+							"key": "dialogs[1]text",
+							"value": "Dreams feel real while we're in them.",
+							"type": "text"
+						},
+						{
+							"key": "dialogs[1]actor",
+							"value": "Joseph Gordon-Levitt",
+							"type": "text"
+						},
+						{
+							"key": "memeReleaseYear",
+							"value": "2011",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/C:/Users/Naveen/Pictures/Screenshots/test1233.png"
+						},
+						{
+							"key": "imageSize",
+							"value": "1024,1024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ixnbfvyeniksbqcfdmdo.supabase.co/functions/v1/annotate",
+					"protocol": "https",
+					"host": [
+						"ixnbfvyeniksbqcfdmdo",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"functions",
+						"v1",
+						"annotate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meta-request-otp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4bmJmdnllbmlrc2JxY2ZkbWRvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTQwMTc2OCwiZXhwIjoyMDQ2OTc3NzY4fQ.tx6A4VxkUpoi3FxwmucoQk2qvYLlCWkrglI68lZHyw4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobileNumber\":\"+916300845446\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ixnbfvyeniksbqcfdmdo.supabase.co/functions/v1/meta-users/request-otp",
+					"protocol": "https",
+					"host": [
+						"ixnbfvyeniksbqcfdmdo",
+						"supabase",
+						"co"
+					],
+					"path": [
+						"functions",
+						"v1",
+						"meta-users",
+						"request-otp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
