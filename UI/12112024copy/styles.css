@@ -1,0 +1,401 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Sky blue background */
+    color: #01579b; /* Dark blue text color */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #0288d1; /* Lighter blue shade */
+}
+
+h4 {
+    color: #01579b;
+}
+
+/* Container styles */
+.actor-container, .dialog-container, .emotion-container, .meme-container, .movie-container {
+    background-color: #ffffff;
+    border: 1px solid #0288d1;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Flexbox layout for placing labels and inputs side by side */
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-row label, .flex-row input, .flex-row select {
+    flex: 1 1 48%; /* Flex-grow and allow wrapping */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.flex-row textarea {
+    width: 100%;
+}
+
+/* Suggestions box */
+.suggestions {
+    border: 1px solid #0288d1;
+    background-color: #ffffff;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #01579b;
+}
+
+#json-display-container {
+    background-color: #ffffff;
+    border: 1px solid #0288d1;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Meme container styles */
+#meme-container {
+    background-color: #f1f8e9;
+    border: 1px solid #388e3c;
+}
+
+input[type="file"] {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+select, input, textarea {
+    padding: 8px;
+    border: 1px solid #0288d1;
+    border-radius: 5px;
+}
+
+pre {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Multi-select dropdown (styling for multi-select dropdown) */
+.multi-select {
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Ensure the actor's name and DOB are aligned side by side */
+.input-group-horizontal {
+    display: flex;
+    gap: 50px;
+}
+
+.input-group-horizontal > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for the filmography checkboxes */
+.filmography-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.checkbox-group label {
+    margin-left: 5px;
+}
+
+/* Styling for the suggestions box */
+.suggestions {
+    position: relative;
+    top: 35px;  /* Adjust the position of suggestions dropdown */
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 10;
+    max-height: 200px;  /* Ensure it doesn't overflow */
+    overflow-y: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Each suggestion item styling */
+.suggestions div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: #f1f1f1;
+}
+.button-group {
+    display: flex;
+    gap: 10px;  /* Adds space between the buttons */
+    margin-top: 10px;
+}
+
+/* Styling for individual buttons */
+.button-group button {
+    padding: 10px 20px;  /* Adjust the button size */
+    cursor: pointer;
+    border: 1px solid whitesmoke;
+    background-color: #1613de;
+    transition: background-color 0.3s ease;
+}
+
+.button-group1{
+    padding: 10px 20px;  /* Adjust the button size */
+    cursor: pointer;
+    color: white;
+    border: 1px solid whitesmoke;
+    background-color: #1613de;
+    transition: background-color 0.3s ease;
+}
+.button-group button:hover {
+    background-color: red;
+}
+
+/* Styling for each input group */
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Align labels and inputs side by side */
+.input-group label {
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Multi-select dropdown styling */
+select[multiple] {
+    height: auto;
+    padding: 8px;
+}
+/* Style for the field group to align items side by side */
+.field-group {
+    display: flex;
+    gap: 100px;  /* Space between the items */
+    margin-bottom: 15px;
+}
+
+/* Style for individual field items within the flex container */
+.field-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for the labels */
+.field-item label {
+    margin-bottom: 5px;  /* Space between label and input */
+}
+
+/* Ensure the input fields and select elements take the full available width */
+.field-item input,
+.field-item select {
+    width: 100%;  /* Make the input and select take up the full width of their container */
+}
+/* Flexbox layout for form items */
+.form-row {
+    display: flex; /* Align children side by side */
+    gap: 50px; /* Add some space between each item */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Each form item inside the row */
+.form-item {
+    flex: 1; /* Allow items to take equal width */
+    min-width: 200px; /* Ensure a minimum width for each item */
+}
+
+/* Style for input boxes */
+input[type="text"], input[type="date"], select {
+    width: 90%; /* Full width to fit the container */
+    height: 25px; /* Adjust height */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px; /* Padding inside the input */
+}
+
+select {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+}
+#emotions-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.emotion-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.emotion-field {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.emotion-label, .emotion-description {
+    flex: 1; /* Makes both input and textarea take up equal space */
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.suggestions {
+    position: relative;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 100%;
+}
+#dialogs-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dialog-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.dialog-field {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dialog-text, .dialog-actor {
+    flex: 1; /* Makes both input and textarea take up equal space */
+}
+
+textarea, input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.suggestions {
+    position: relative;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 100%;
+}
+#meme-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.meme-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.meme-release-year, .meme-upload {
+    flex: 1;
+}
+
+select, input[type="file"], input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+
+.technologyForm {
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    background-color: greenyellow;
+    color: #fff;
+    border: 1px solid #444;
+    min-height: 38px;
+}
+
+.select2-container--default .select2-results__option {
+    color: gray;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #007bff;
+    border: 2px solid #0056b3;
+    color: white;
+}

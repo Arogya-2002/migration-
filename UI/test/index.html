@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor, Movie, and Emotion Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Actor, Movie, and Emotion Details</h1>
+
+    <div id="actors-container">
+        <!-- Actor containers will be added here -->
+    </div>
+    <button type="button" onclick="addActorContainer()">Add Actor</button>
+
+    <!-- Movie Container (static, with suggestions for title and director) -->
+    <div id="movies-container">
+        <h4>Movie 1</h4>
+        
+        <label for="title-1">Title:</label><br>
+        <input type="text" id="title-1" name="title" oninput="showSuggestions(this.value, 1, 'movie')" autocomplete="off">
+        <div id="suggestions-1-movie" class="suggestions"></div><br><br>
+
+        <label for="release-year-1">Release Year:</label><br>
+        <select id="releaseYear-1" name="releaseYear">
+            <option value="">Select Year</option>
+            <!-- Options generated dynamically -->
+        </select><br><br>
+
+        <label>Genre:</label><br>
+        <!-- Multi-select dropdown for genre -->
+        <select id="genre-1" name="genre" multiple size="5">
+            <!-- Genre options will be added dynamically from the array -->
+        </select><br><br>
+
+        <label for="director-1">Director:</label><br>
+        <input type="text" id="director-1" name="director" oninput="showSuggestions(this.value, 1, 'director')" autocomplete="off">
+        <div id="suggestions-1-director" class="suggestions"></div><br><br>
+    </div>
+
+    <div id="emotions-container">
+        <!-- Single Emotion container will be added here -->
+        <div class="emotion-container" id="emotion-container-1">
+            <h4>Emotion 1</h4>
+            <label for="label-1">Label:</label><br>
+            <input type="text" id="label-1" name="emotionLabel" oninput="showSuggestions(this.value, 1, 'emotion')" autocomplete="off">
+            <div id="suggestions-1-emotion" class="suggestions"></div><br><br>
+
+            <label for="description-1">Description:</label><br>
+            <textarea id="description-1" name="emotionDescription"></textarea><br><br>
+        </div>
+    </div>
+    <!-- Dialog Container -->
+<div id="dialogs-container">
+    <!-- Static Dialog Container -->
+    <div class="dialog-container" id="dialog-container-1">
+        <h4>Dialog 1</h4>
+        
+        <label for="dialog[0]text-0">Dialogue Text:</label><br>
+        <textarea id="dialog[0]text-0" name="dialog[0]text"></textarea><br><br>
+
+        <label for="dialog[0]actor-0">Dialogue Actor:</label><br>
+        <input type="text" id="dialog[0]actor-0" name="dialog[0]actor" oninput="showSuggestions(this.value, 0, 'dialog-actor')" autocomplete="off">
+        <div id="suggestions-0-actor" class="suggestions"></div><br><br>
+
+        <button type="button" onclick="removeDialogContainer(0)">Remove Dialog</button>
+    </div>
+</div>
+<button type="button" onclick="addDialogContainer()">Add Dialog</button>
+<!-- Meme Container -->
+<div id="meme-container">
+    <h4>Meme Container</h4>
+
+    <!-- Meme Release Year -->
+    <label for="memeReleaseYear">Meme Release Year:</label>
+    <select id="memeReleaseYear">
+        <option value="">Select Year</option>
+        <!-- Loop to create year options from 2024 to 1900 -->
+        <script>
+            for (let year = 2024; year >= 1900; year--) {
+                document.write(`<option value="${year}">${year}</option>`);
+            }
+        </script>
+    </select><br><br>
+
+    <!-- Image Upload -->
+    <label for="meme-image">Upload Meme Image:</label><br>
+    <input type="file" id="meme-image" name="media" accept="image/*"><br><br>
+
+    <!-- Image Size -->
+    <label for="meme-image-size">Image Size (optional):</label><br>
+    <input type="number" id="meme-height-width" name="imageSize" placeholder="1024,1024"><br><br>
+
+
+    <div>
+        <button onclick="submitAllData()">Submit Form</button>
+    </div>
+
+   
+    <div id="json-display-container">
+        <h3>Form Data as JSON:</h3>
+        <pre id="json-display"></pre> <!-- The formatted JSON will appear here -->
+    </div>
+    
+
+    <script src="script.js" defer></script>
+</body>
+</html>

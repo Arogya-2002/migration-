@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Data into Supabase</title>
+  <link rel="stylesheet" href="form.css"> <!-- Optional, if you have custom styles -->
+</head>
+<body>
+    <form id="insertForm">
+        <!-- Meme Details -->
+        <label for="image">Meme Image:</label>
+        <input type="file" id="image" name="image" required><br><br>
+      
+        <label for="image_size">Image Size (Width, Height):</label>
+        <input type="text" id="image_size" name="image_size" placeholder="e.g., 1024, 1024" required><br><br>
+      
+        <label for="release_year">Release Year:</label>
+        <input type="number" id="release_year" name="release_year" required><br><br>
+      
+        <!-- Movie Details -->
+        <label for="movie_title">Movie Title:</label>
+        <input type="text" id="movie_title" name="movie_title" required><br><br>
+      
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required><br><br>
+      
+        <label for="movie_release_year">Movie Release Year:</label>
+        <input type="number" id="movie_release_year" name="movie_release_year" required><br><br>
+      
+        <!-- Genre Selection -->
+        <label>Genre:</label><br>
+        <input type="checkbox" name="genre" value="Action"> Action<br>
+        <input type="checkbox" name="genre" value="Comedy"> Comedy<br>
+        <input type="checkbox" name="genre" value="Science Fiction"> Science Fiction<br>
+        <input type="checkbox" name="genre" value="Drama"> Drama<br><br>
+      
+        <!-- Actors Section -->
+        <div id="actorsContainer">
+          <label for="actor_name">Actor Name:</label>
+          <select class="actor_name" name="actor_name[]" required>
+            <option value="Leonardo DiCaprio">Leonardo DiCaprio</option>
+            <option value="Joseph Gordon-Levitt">Joseph Gordon-Levitt</option>
+            <!-- Add more actors here -->
+          </select><br><br>
+      
+          <label for="actor_dob">Date of Birth:</label>
+          <input type="date" id="actor_dob_0" name="actor_dob[]" required><br><br>
+      
+          <label>Filmography:</label><br>
+          <label><input type="checkbox" name="actor_filmography_0" value="Inception"> Inception</label><br>
+          <label><input type="checkbox" name="actor_filmography_0" value="Titanic"> Titanic</label><br>
+          <label><input type="checkbox" name="actor_filmography_0" value="The Revenant"> The Revenant</label><br>
+          <!-- Add more filmography checkboxes as needed -->
+          <br><br>
+      
+          <button type="button" class="deleteActor">Delete Actor</button><br><br>
+        </div>
+      
+        <button type="button" onclick="addActor()">Add Another Actor</button><br><br>
+      
+        <!-- Dialog Section -->
+        <label>Dialogs:</label><br>
+        <div id="dialogsContainer">
+          <input type="text" class="dialog_text" placeholder="Enter dialog text" required><br><br>
+          <label for="dialog_actor_0">Actor:</label>
+          <select id="dialog_actor_0" name="dialog_actor_0" required>
+            <option value="Leonardo DiCaprio">Leonardo DiCaprio</option>
+            <option value="Joseph Gordon-Levitt">Joseph Gordon-Levitt</option>
+            <!-- Add more actors here -->
+          </select><br><br>
+      
+          <button type="button" class="deleteDialog">Delete Dialog</button><br><br>
+        </div>
+      
+        <button type="button" onclick="addDialog()">Add Another Dialog</button><br><br>
+      
+        <!-- Emotion Section -->
+        <label>Emotion Label:</label><br>
+        <div id="emotionsContainer">
+          <input type="text" class="emotion_label" name="emotion_label[]" list="emotionList" required><br><br>
+          <datalist id="emotionList">
+            <option value="Happy">
+            <option value="Sad">
+            <option value="Angry">
+            <option value="Surprised">
+            <option value="Confused">
+            <!-- Add more options here -->
+          </datalist>
+      
+          <label for="emotion_description">Emotion Description:</label>
+          <textarea class="emotion_description" name="emotion_description[]" required></textarea><br><br>
+      
+          <button type="button" class="deleteEmotion">Delete Emotion</button><br><br>
+        </div>
+      
+        <button type="button" onclick="addEmotion()">Add Another Emotion</button><br><br>
+      
+        <button type="submit">Submit</button>
+      </form>
+      
+  <script src="script.js"></script>
+</body>
+</html>

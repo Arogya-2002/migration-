@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor, Movie, and Emotion Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Actor, Movie, and Emotion Details</h1>
+
+    <div id="actors-container">
+        <!-- Actor containers will be added here -->
+    </div>
+    <div class="button-group">
+    <button type="button" onclick="addActorContainer()">Add Actor</button>
+</div>
+    <!-- Movie Container (static, with suggestions for title and director) -->
+    <div id="movies-container">
+        <h4>Movie 1</h4>
+    
+        <div class="form-row">
+            <div class="form-item">
+                <label for="title-1">Title:</label><br>
+                <input type="text" id="title-1" name="title" oninput="showSuggestions(this.value, 1, 'movie')" autocomplete="off">
+                <div id="suggestions-1-movie" class="suggestions"></div><br><br>
+            </div>
+    
+            <div class="form-item1">
+                <label for="release-year-1">Release Year:</label><br>
+                <select id="releaseYear-1" name="releaseYear">
+                    <option value="">Select Year</option>
+                    <!-- Options generated dynamically -->
+                </select><br><br>
+            </div>
+    
+            <div class="form-item">
+                <label>Genre:</label><br>
+                <!-- <select id="genre-1" name="genre" multiple size="5" data-placeholder="Select genre" multiple data-multi-select data-search="True" >
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Horror">Horror</option>
+                </select><br><br> -->
+                <!-- <select id="genre-1" name="genre" multiple size="5" >
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Horror">Horror</option>
+                </select> -->
+                <form id="technologyForm">
+                    <select class="js-example-basic-multiple" name="technologies[]" multiple="multiple" style="width: 300px;">
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Biopic">Biopic</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="History">History</option>
+                        <option value="Musical">Musical</option>
+                        <option value="Horror">Horror</option>
+
+                    </select>
+                    <input type="hidden" id="selectedTechnologies" name="selectedTechnologies">
+                </form>
+            </div>
+    
+            <div class="form-item">
+                <label for="director-1">Director:</label><br>
+                <input type="text" id="director-1" name="director" oninput="showSuggestions(this.value, 1, 'director')" autocomplete="off">
+                <div id="suggestions-1-director" class="suggestions"></div><br><br>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="emotions-container">
+        <!-- Single Emotion container will be added here -->
+        <div class="emotion-container" id="emotion-container-1">
+            <h4>Emotion</h4>
+            
+            <!-- Emotion Fields (Label and Description side by side) -->
+            <div class="emotion-field">
+                <div class="emotion-label">
+                    <label for="label-1">Label:</label><br>
+                    <input type="text" id="label-1" name="emotionLabel" oninput="showSuggestions(this.value, 1, 'emotion')" autocomplete="off">
+                    <div id="suggestions-1-emotion" class="suggestions"></div><br><br>
+                </div>
+                
+                <div class="emotion-description">
+                    <label for="description-1">Description:</label><br>
+                    <select id="description-1" name="emotionDescription">
+                        <option value="">Select an emotion description</option>
+                        <option value="A feeling of joy, contentment, and positive well-being, often accompanied by smiling or laughter.">Happy</option>
+                        <option value="A feeling of sorrow, disappointment, or emotional pain, often accompanied by tears or quietness.">Sad</option>
+                        <option value="A strong feeling of displeasure, frustration, or rage, often expressed through loud or abrupt actions.">Angry</option>
+                        <option value="A reaction of astonishment or sudden wonder, often triggered by something unexpected.">Surprised</option>
+                        <option value="A feeling of anxiety, worry, or dread caused by the perception of danger or the unknown.">Fearful</option>
+                        <option value="A calm, balanced state of mind, with no strong emotions present, neither positive nor negative.">Neutral</option>
+                        <option value="A feeling of courage and bravery, often accompanied by a sense of duty or selflessness in the face of danger.A feeling of courage and bravery, often accompanied by a sense of duty or selflessness in the face of danger.">Heroism</option>
+                        <option value="A feeling of strong aversion or repulsion towards something perceived as unpleasant or offensive.">Disgust</option>
+                        <option value="A feeling of awe or amazement, often inspired by something beautiful, extraordinary, or mysterious.">Confused</option>
+                        <option value="A sense of calm, tranquility, and harmony, free from conflict or disturbance.">Wonder</option>
+                        <!-- Add more options as needed -->
+                    </select><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dialog Container -->
+    <div id="dialogs-container">
+        <!-- Static Dialog Container -->
+        <div class="dialog-container" id="dialog-container-1">
+            <h4>Dialog 1</h4>
+            
+            <!-- Dialog Fields (Text and Actor side by side) -->
+            <div class="dialog-field">
+                <div class="dialog-text">
+                    <label for="dialog[0]text-0">Dialogue Text:</label><br>
+                    <textarea id="dialog[0]text-0" name="dialog[0]text"></textarea><br><br>
+                </div>
+                
+                <div class="dialog-actor">
+                    <label for="dialog[0]actor-0">Dialogue Actor:</label><br>
+                    <input type="text" id="dialog[0]actor-0" name="dialog[0]actor" oninput="showSuggestions(this.value, 0, 'dialog-actor')" autocomplete="off">
+                    <div id="suggestions-0-actor" class="suggestions"></div><br><br>
+                </div>
+            </div>
+            
+            <button type="button" onclick="removeDialogContainer(0)">Remove Dialog</button>
+        </div>
+    </div>
+    <button type="button" onclick="addDialogContainer()">Add Dialog</button>
+    
+<!-- Meme Container -->
+<div id="meme-container">
+    <h4>Meme Container</h4>
+
+    <!-- Meme Release Year and Image Upload side by side -->
+    <div class="meme-fields">
+        <!-- Meme Release Year -->
+        <div class="meme-release-year">
+            <label for="memeReleaseYear">Meme Release Year:</label><br>
+            <select id="memeReleaseYear">
+                <option value="">Select Year</option>
+                <!-- Loop to create year options from 2024 to 1900 -->
+                <script>
+                    for (let year = 2024; year >= 1900; year--) {
+                        document.write(`<option value="${year}">${year}</option>`);
+                    }
+                </script>
+            </select><br><br>
+        </div>
+
+        <!-- Upload Meme Image -->
+        <div class="meme-upload">
+            <label for="meme-image">Upload Meme Image:</label><br>
+            <input type="file" id="meme-image" name="media" accept="image/*"><br><br>
+        </div>
+    </div>
+
+    <!-- Image Size -->
+    <label for="meme-image-size">Image Size (optional):</label><br>
+    <input type="number" id="meme-height-width" name="imageSize" placeholder="1024,1024"><br><br>
+</div>
+
+
+    <div>
+        <button onclick="submitAllData()">Submit Form</button>
+    </div>
+
+   
+    <div id="json-display-container">
+        <h3>Form Data as JSON:</h3>
+        <pre id="json-display"></pre> <!-- The formatted JSON will appear here -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="script.js" defer></script>
+   
+</body>
+</html>
